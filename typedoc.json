@@ -1,0 +1,13 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "entryPoints": [
+      "./src/core.ts", 
+      "./src/currencyFormatter.ts", 
+      "./src/currencyHelper.ts", 
+      "./src/dateFormatter.ts", 
+      "./src/dateTimeFormatter.ts", 
+      "./src/timeFormatter.ts", 
+      "./src/timeUtils.ts"
+    ],
+    "out": "doc"
+}

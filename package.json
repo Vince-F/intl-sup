@@ -1,0 +1,27 @@
+{
+  "name": "intl-sup",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "files": ["dist"],
+  "exports": {
+    "./core": "./dist/core.js",
+    "./currencyFormatter": "./dist/currencyFormatter.js",
+    "./currencyHelper": "./dist/currencyHelper.js",
+    "./dateFormatter": "./dist/dateFormatter.js",
+    "./dateTimeFormatter": "./dist/dateTimeFormatter.js",
+    "./timeFormatter": "./dist/timeFormatter.js",
+    "./timeUtils": "./dist/timeUtils.js"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "doc": "typedoc"
+  },
+  "devDependencies": {
+    "typedoc": "^0.28.17",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
+  }
+}
