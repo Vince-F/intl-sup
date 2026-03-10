@@ -1,5 +1,7 @@
 import { getUserLocale } from "./core";
 
+const sampleDate = new Date("2026-01-25T18:30:00");
+
 /**
  * 
  * @returns 
@@ -8,7 +10,9 @@ import { getUserLocale } from "./core";
  */
 export function isUsing24HourClock(): boolean {
   const locale = getUserLocale();
-  return locale.hourCycle === "h23" || locale.hourCycle === "h24";
+  const formatter = new Intl.DateTimeFormat(locale, { hour: "numeric"});
+  const formatedDate = formatter.format(sampleDate)
+  return !formatedDate.match(/AM|PM/i);
 }
 
 /**

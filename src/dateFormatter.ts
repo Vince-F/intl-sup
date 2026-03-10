@@ -2,12 +2,12 @@ import { getUserLocale } from "./core";
 import { buildKey } from "./internal/keyBuilder";
 export type DateStyleShort = "full" | "long" | "medium" | "short";
 export type DateStyleLong = {
-  dayPeriod: "narrow" | "short" | "long" | undefined;
-  weekday: "long" | "short" | "narrow"| undefined;
-  day: "numeric" | "2-digit" | undefined;
-  month: "numeric" | "2-digit" | "long" | "short" | "narrow" | undefined;
-  year: "numeric" | "2-digit" | undefined;
-  era: "long" | "short" | "narrow"| undefined;
+  dayPeriod?: "narrow" | "short" | "long";
+  weekday?: "long" | "short" | "narrow";
+  day?: "numeric" | "2-digit";
+  month?: "numeric" | "2-digit" | "long" | "short" | "narrow";
+  year?: "numeric" | "2-digit" ;
+  era?: "long" | "short" | "narrow";
 };
 
 const cachedFormatters: Map<string, Intl.DateTimeFormat> = new Map();

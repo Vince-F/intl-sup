@@ -13,6 +13,9 @@ export function setUserLocale(locale: string) {
   } catch (e) {
     throw new Error(`Invalid locale string: ${locale}`);
   }
+  if (userLocaleComplete.region === undefined) {
+    throw new Error(`Invalid locale string: ${locale}`);
+  }
 }
 
 /**

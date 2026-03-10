@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "tests/timeUtils.test.ts", "tests/timeFormatter.test.ts", "tests/dateTimeFormatter.test.ts", "tests/dateFormatter.test.ts", "tests/currencyHelper.test.ts", "tests/currencyFormatter.test.ts", "tests/core.test.ts"]
 }

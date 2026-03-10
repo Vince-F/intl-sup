@@ -3,7 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "exports": {
     "./core": "./dist/core.js",
     "./currencyFormatter": "./dist/currencyFormatter.js",
@@ -17,11 +19,14 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "doc": "typedoc"
+    "doc": "typedoc",
+    "test": "vitest"
   },
   "devDependencies": {
+    "@vitest/ui": "^4.0.18",
     "typedoc": "^0.28.17",
     "typescript": "~5.9.3",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vitest": "^4.0.18"
   }
 }
