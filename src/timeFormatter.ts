@@ -2,10 +2,10 @@ import { getUserLocale } from "./core";
 import { buildKey } from "./internal/keyBuilder";
 export type TimeStyleShort = "full" | "long" | "medium" | "short";
 export type TimeStyleLong = {
-  hour: "numeric" | "2-digit" | undefined;
-  minute: "numeric" | "2-digit" | undefined;
-  second: "numeric" | "2-digit" | undefined;
-  fractionalSecondDigits: 1 | 2 | 3 | undefined;
+  hour: "numeric" | "2-digit";
+  minute?: "numeric" | "2-digit";
+  second?: "numeric" | "2-digit";
+  fractionalSecondDigits?: 1 | 2 | 3;
 };
 
 const cachedFormatters: Map<string, Intl.DateTimeFormat> = new Map();

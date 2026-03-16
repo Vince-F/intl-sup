@@ -1,5 +1,6 @@
 {
     "$schema": "https://typedoc.org/schema.json",
+    "projectDocuments": ["documents/*.md"],
     "entryPoints": [
       "./src/core.ts", 
       "./src/currencyFormatter.ts", 
