@@ -1,7 +1,13 @@
 {
   "name": "intl-sup",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Vincent Francolin"
+  },
+  "description": "A library providing utilities on top of Intl namespace",
+  "repository": {
+    "url": "https://github.com/Vince-F/intl-sup"
+  },
   "type": "module",
   "files": [
     "dist"
