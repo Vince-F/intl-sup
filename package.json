@@ -1,6 +1,6 @@
 {
   "name": "intl-sup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Vincent Francolin"
   },
@@ -10,23 +10,46 @@
   },
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "exports": {
-    "./core": "./dist/core.js",
-    "./currencyFormatter": "./dist/currencyFormatter.js",
-    "./currencyHelper": "./dist/currencyHelper.js",
-    "./dateFormatter": "./dist/dateFormatter.js",
-    "./dateTimeFormatter": "./dist/dateTimeFormatter.js",
-    "./timeFormatter": "./dist/timeFormatter.js",
-    "./timeUtils": "./dist/timeUtils.js"
+    "./core": {
+      "types": "./types/src/core.d.ts",
+      "import": "./dist/core.js"
+    },
+    "./currencyFormatter": {
+      "types": "./types/src/currencyFormatter.d.ts",
+      "import": "./dist/currencyFormatter.js"
+    },
+    "./currencyHelper": {
+      "types": "./types/src/currencyHelper.d.ts",
+      "import": "./dist/currencyHelper.js"
+    },
+    "./dateFormatter": {
+      "types": "./types/src/dateFormatter.d.ts",
+      "import": "./dist/dateFormatter.js"
+    },
+    "./dateTimeFormatter": {
+      "types": "./types/src/dateTimeFormatter.d.ts",
+      "import": "./dist/dateTimeFormatter.js"
+    },
+    "./timeFormatter": {
+      "types": "./types/src/timeFormatter.d.ts",
+      "import": "./dist/timeFormatter.js"
+    },
+    "./timeUtils": {
+      "types": "./types/src/timeUtils.d.ts",
+      "import": "./dist/timeUtils.js"
+    }
   },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "doc": "typedoc",
-    "test": "vitest"
+    "test": "vitest",
+    "types": "tsc --emitDeclarationOnly"
   },
   "devDependencies": {
     "@vitest/ui": "^4.0.18",
