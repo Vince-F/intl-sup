@@ -17,8 +17,6 @@ export default defineConfig({
         timeUtils: resolve(__dirname, 'src/timeUtils.ts'),
       },
       name: 'intl-sup',
-      // the proper extensions will be added
-      fileName: 'intl-sup',
     },
     rollupOptions: {
       external: [],
