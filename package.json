@@ -36,6 +36,10 @@
       "types": "./types/src/dateTimeFormatter.d.ts",
       "import": "./dist/dateTimeFormatter.js"
     },
+    "./numberFormatter": {
+      "types": "./types/src/numberFormatter.d.ts",
+      "import": "./dist/numberFormatter.js"
+    },
     "./timeFormatter": {
       "types": "./types/src/timeFormatter.d.ts",
       "import": "./dist/timeFormatter.js"

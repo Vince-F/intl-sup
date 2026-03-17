@@ -7,6 +7,7 @@
       "./src/currencyHelper.ts", 
       "./src/dateFormatter.ts", 
       "./src/dateTimeFormatter.ts", 
+      "./src/numberFormatter.ts",
       "./src/timeFormatter.ts", 
       "./src/timeUtils.ts"
     ],
