@@ -8,6 +8,8 @@
   "repository": {
     "url": "https://github.com/Vince-F/intl-sup"
   },
+  "license": "MIT",
+  "keywords": ["intl", "internationalization", "localization", "i18n", "l10n", "date", "currency", "formatting"],
   "type": "module",
   "files": [
     "dist",
