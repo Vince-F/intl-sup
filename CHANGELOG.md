@@ -1,4 +1,7 @@
-# 1.1.0
+# 1.1.1 
+- Fix: "numberFormatter" missing from library
+
+# 1.1.0 (DEPRECATED)
 - Feature: add "numberFormatter"
 
 # 1.0.2
