@@ -1,15 +1,15 @@
 {
-    "$schema": "https://typedoc.org/schema.json",
-    "projectDocuments": ["documents/*.md"],
-    "entryPoints": [
-      "./src/core.ts", 
-      "./src/currencyFormatter.ts", 
-      "./src/currencyHelper.ts", 
-      "./src/dateFormatter.ts", 
-      "./src/dateTimeFormatter.ts", 
-      "./src/numberFormatter.ts",
-      "./src/timeFormatter.ts", 
-      "./src/timeUtils.ts"
-    ],
-    "out": "doc"
+  "$schema": "https://typedoc.org/schema.json",
+  "projectDocuments": ["documents/*.md"],
+  "entryPoints": [
+    "./src/core.ts",
+    "./src/currencyFormatter.ts",
+    "./src/currencyHelper.ts",
+    "./src/dateFormatter.ts",
+    "./src/dateTimeFormatter.ts",
+    "./src/numberFormatter.ts",
+    "./src/timeFormatter.ts",
+    "./src/timeUtils.ts"
+  ],
+  "out": "doc"
 }

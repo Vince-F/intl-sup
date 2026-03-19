@@ -3,7 +3,7 @@ let userLocaleComplete: Intl.Locale | undefined;
 /**
  * Initliaze the locale for the library, all other utilities rely on this.
  * It can be called multiple times to change the locale.
- * 
+ *
  * @param locale The local to be set, it's expected to be valid or the function will throw.
  * @throws {Error} Throws if the local is invalid.
  * @since 1.0.0
@@ -12,7 +12,7 @@ let userLocaleComplete: Intl.Locale | undefined;
 export function setUserLocale(locale: string) {
   try {
     userLocaleComplete = new Intl.Locale(locale);
-  } catch (e) {
+  } catch {
     throw new Error(`Invalid locale string: ${locale}`);
   }
   if (userLocaleComplete.region === undefined) {
@@ -22,7 +22,7 @@ export function setUserLocale(locale: string) {
 
 /**
  * Retrieve the current user locale.
- * 
+ *
  * @throws {Error} Throws if the local is invalid.
  * @returns The current user locale.
  * @since 1.0.0
@@ -30,8 +30,7 @@ export function setUserLocale(locale: string) {
  */
 export function getUserLocale(): Intl.Locale {
   if (!userLocaleComplete) {
-    throw new Error('User locale has not been set.');
+    throw new Error("User locale has not been set.");
   }
   return userLocaleComplete;
 }
-

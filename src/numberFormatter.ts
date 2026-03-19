@@ -1,9 +1,6 @@
-import { getUserLocale } from "./core";
-import { buildKey } from "./internal/keyBuilder";
+import { getNumberFomatter } from "./internal/cachedNumberFormatters";
 
-const cachedFormatters = new Map<string, Intl.NumberFormat>();
-
-export type RoudingMethod = "ceil" | "floor" | "round"; 
+export type RoudingMethod = "ceil" | "floor" | "round";
 
 /**
  * Format number based on current user locale.
@@ -13,14 +10,9 @@ export type RoudingMethod = "ceil" | "floor" | "round";
  * @remarks Browser support: Chrome 24, Edge 12, Firefox 29, Opera 15, Safari 10, Node 0.23, Deno 1.8, Bun 1
  */
 export function formatNumber(number: number): string {
-  const key = buildKey("number");
-  let formatter: Intl.NumberFormat | undefined = cachedFormatters.get(key);
-  if (!formatter) {
-    formatter = new Intl.NumberFormat(getUserLocale(), {
-      style: "decimal"
-    });
-    cachedFormatters.set(key, formatter);
-  }
+  const formatter = getNumberFomatter({
+    style: "decimal",
+  });
   return formatter.format(number);
 }
 
@@ -33,16 +25,11 @@ export function formatNumber(number: number): string {
  * @remarks Browser support: Chrome 24, Edge 12, Firefox 29, Opera 15, Safari 10, Node 0.23, Deno 1.8, Bun 1
  */
 export function formatNumberWithoutDecimal(number: number, roundingMethod: RoudingMethod = "round"): string {
-  const key = buildKey("numberWoDecimal");
-  let formatter: Intl.NumberFormat | undefined = cachedFormatters.get(key);
-  if (!formatter) {
-    formatter = new Intl.NumberFormat(getUserLocale(), {
-      style: "decimal",
-      maximumFractionDigits: 0,
-      minimumFractionDigits: 0
-    });
-    cachedFormatters.set(key, formatter);
-  }
+  const formatter = getNumberFomatter({
+    style: "decimal",
+    maximumFractionDigits: 0,
+    minimumFractionDigits: 0,
+  });
   let amountRounded: number;
   switch (roundingMethod) {
     case "ceil":

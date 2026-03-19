@@ -9,7 +9,16 @@
     "url": "https://github.com/Vince-F/intl-sup"
   },
   "license": "MIT",
-  "keywords": ["intl", "internationalization", "localization", "i18n", "l10n", "date", "currency", "formatting"],
+  "keywords": [
+    "intl",
+    "internationalization",
+    "localization",
+    "i18n",
+    "l10n",
+    "date",
+    "currency",
+    "formatting"
+  ],
   "type": "module",
   "files": [
     "dist",
@@ -50,17 +59,25 @@
     }
   },
   "scripts": {
+    "checkAndBuildAll": "npm run lint:check && npm run test && npm run build && npm run types && npm run doc",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "doc": "typedoc",
-    "test": "vitest",
-    "types": "tsc --emitDeclarationOnly"
+    "test": "vitest run",
+    "types": "tsc --emitDeclarationOnly",
+    "lint:fix": "prettier --write . && eslint --fix .",
+    "lint:check": "prettier --check . && eslint ."
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@vitest/ui": "^4.0.18",
+    "eslint": "^10.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.1",
     "typedoc": "^0.28.17",
     "typescript": "~5.9.3",
+    "typescript-eslint": "^8.57.1",
     "vite": "^7.2.4",
     "vitest": "^4.0.18"
   }
