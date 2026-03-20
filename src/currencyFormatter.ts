@@ -1,9 +1,6 @@
-import { getUserLocale } from "./core";
-import { buildKey } from "./internal/keyBuilder";
+import { getNumberFomatter } from "./internal/cachedNumberFormatters";
 
-const cachedFormatters = new Map<string, Intl.NumberFormat>();
-
-export type RoudingMethod = "ceil" | "floor" | "round"; 
+export type RoudingMethod = "ceil" | "floor" | "round";
 
 /**
  * Format currency based on current user locale and provided currency code, with cents if local supports it.
@@ -14,15 +11,10 @@ export type RoudingMethod = "ceil" | "floor" | "round";
  * @remarks Browser support: Chrome 24, Edge 12, Firefox 29, Opera 15, Safari 10, Node 0.23, Deno 1.8, Bun 1
  */
 export function formatCurrency(amount: number, currencyCode: string): string {
-  const key = buildKey(currencyCode);
-  let formatter: Intl.NumberFormat | undefined = cachedFormatters.get(key);
-  if (!formatter) {
-    formatter = new Intl.NumberFormat(getUserLocale(), {
-      style: "currency",
-      currency: currencyCode
-    });
-    cachedFormatters.set(key, formatter);
-  }
+  const formatter = getNumberFomatter({
+    style: "currency",
+    currency: currencyCode,
+  });
   return formatter.format(amount);
 }
 
@@ -35,16 +27,15 @@ export function formatCurrency(amount: number, currencyCode: string): string {
  * @since 1.0.0
  * @remarks Browser support: Chrome 24, Edge 12, Firefox 29, Opera 15, Safari 10, Node 0.23, Deno 1.8, Bun 1
  */
-export function formatCurrencyWithoutDecimal(amount: number, currencyCode: string, roundingMethod: RoudingMethod = "round"): string {
-  const key = buildKey(currencyCode);
-  let formatter: Intl.NumberFormat | undefined = cachedFormatters.get(key);
-  if (!formatter) {
-    formatter = new Intl.NumberFormat(getUserLocale(), {
-      style: "currency",
-      currency: currencyCode
-    });
-    cachedFormatters.set(key, formatter);
-  }
+export function formatCurrencyWithoutDecimal(
+  amount: number,
+  currencyCode: string,
+  roundingMethod: RoudingMethod = "round",
+): string {
+  const formatter = getNumberFomatter({
+    style: "currency",
+    currency: currencyCode,
+  });
   let amountRounded: number;
   switch (roundingMethod) {
     case "ceil":
@@ -58,8 +49,9 @@ export function formatCurrencyWithoutDecimal(amount: number, currencyCode: strin
       amountRounded = Math.round(amount);
       break;
   }
-  return formatter.formatToParts(amountRounded)
-    .filter(part => part.type !== "decimal" && part.type !== "fraction")
-    .map(part => part.value)
+  return formatter
+    .formatToParts(amountRounded)
+    .filter((part) => part.type !== "decimal" && part.type !== "fraction")
+    .map((part) => part.value)
     .join("");
 }

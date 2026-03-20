@@ -1,5 +1,5 @@
-import { getUserLocale } from "./core";
-import { buildKey } from "./internal/keyBuilder";
+import { getDateTimeFormatter } from "./internal/cachedDateFormatters";
+
 export type TimeStyleShort = "full" | "long" | "medium" | "short";
 export type TimeStyleLong = {
   hour: "numeric" | "2-digit";
@@ -8,11 +8,9 @@ export type TimeStyleLong = {
   fractionalSecondDigits?: 1 | 2 | 3;
 };
 
-const cachedFormatters: Map<string, Intl.DateTimeFormat> = new Map();
-
 /**
  * Format a time part of a date based on current user locale.
- * 
+ *
  * @param date The date for which to format the time, the date itself (year, month, day) doesn't matter.
  * @param format Format options either in shortcut form with ({@link TimeStyleShort} or detailled form with {@link TimeStyleLong}).
  * @returns The formatted time string.
@@ -20,23 +18,15 @@ const cachedFormatters: Map<string, Intl.DateTimeFormat> = new Map();
  * @remarks Browser support: Chrome 74, Edge 79, Firefox 75, Opera 62, Safari 14, Node 12, Bun 1, Deno 1.8
  */
 export function formatTime(date: Date, format: TimeStyleShort | TimeStyleLong): string {
-  let key: string = buildKey(format);
-  let formatter: Intl.DateTimeFormat;
-
-  if (cachedFormatters.has(key)) {
-    formatter = cachedFormatters.get(key)!;
+  let dateFormaterOption: Intl.DateTimeFormatOptions | undefined;
+  if (typeof format === "string") {
+    dateFormaterOption = {
+      timeStyle: format,
+    };
   } else {
-    let dateFormaterOption: Intl.DateTimeFormatOptions | undefined;
-    if (typeof format === "string") {
-      dateFormaterOption = {
-        timeStyle: format,
-      }
-    } else {
-      dateFormaterOption = format;
-    }
-    formatter = new Intl.DateTimeFormat(getUserLocale(), dateFormaterOption);
-    cachedFormatters.set(key, formatter);
+    dateFormaterOption = format;
   }
-  
+  const formatter = getDateTimeFormatter(dateFormaterOption);
+
   return formatter.format(date);
 }

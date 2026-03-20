@@ -2,7 +2,7 @@
 title: How to use?
 ---
 
-This library makes the assumption that your user will have one locale 
+This library makes the assumption that your user will have one locale
 at a time, and this local shall be used to format all data.
 
 As such you should first initialize the current local of your user as follow:

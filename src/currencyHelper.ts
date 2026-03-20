@@ -1,6 +1,6 @@
-import { getUserLocale } from "./core";
+import { getNumberFomatter } from "./internal/cachedNumberFormatters";
 
-export type CurrencyPosition = "before" |"after";
+export type CurrencyPosition = "before" | "after";
 
 /**
  * Checks if the currency is supported by the current environment.
@@ -21,12 +21,12 @@ export function isCurrencySupported(currencyCode: string): boolean {
  * @remarks Browser support: Chrome 24, Edge 12, Firefox 29, Opera 15, Safari 10, Node 0.23, Deno 1.8, Bun 1
  */
 export function getCurrencySymbol(currencyCode: string): string {
-  const formatter = new Intl.NumberFormat(getUserLocale(), {
+  const formatter = getNumberFomatter({
     style: "currency",
-    currency: currencyCode
+    currency: currencyCode,
   });
   const parts = formatter.formatToParts(0);
-  const symbolPart = parts.find(part => part.type === "currency");
+  const symbolPart = parts.find((part) => part.type === "currency");
   return symbolPart ? symbolPart.value : currencyCode;
 }
 
@@ -38,13 +38,13 @@ export function getCurrencySymbol(currencyCode: string): string {
  * @remarks Browser support: Chrome 77, Edge 79, Firefox 42, Opera 64, Safari 14.1, Node 12.11; Deno 1.8, Bun 1
  */
 export function getCurrencyNarrowSymbol(currencyCode: string): string {
-  const formatter = new Intl.NumberFormat(getUserLocale(), {
+  const formatter = getNumberFomatter({
     style: "currency",
     currencyDisplay: "narrowSymbol",
-    currency: currencyCode
+    currency: currencyCode,
   });
   const parts = formatter.formatToParts(0);
-  const symbolPart = parts.find(part => part.type === "currency");
+  const symbolPart = parts.find((part) => part.type === "currency");
   return symbolPart ? symbolPart.value : currencyCode;
 }
 
@@ -56,12 +56,12 @@ export function getCurrencyNarrowSymbol(currencyCode: string): string {
  * @remarks Browser support: Chrome 24, Edge 12, Firefox 29, Opera 15, Safari 10, Node 0.23, Deno 1.8, Bun 1
  */
 export function getCurrencyPosition(currencyCode: string): CurrencyPosition {
-  const formatter = new Intl.NumberFormat(getUserLocale(), {
+  const formatter = getNumberFomatter({
     style: "currency",
-    currency: currencyCode
+    currency: currencyCode,
   });
   const parts = formatter.formatToParts(0);
-  const symbolPartIndex = parts.findIndex(part => part.type === "currency");
+  const symbolPartIndex = parts.findIndex((part) => part.type === "currency");
   return symbolPartIndex === 0 ? "before" : "after";
 }
 
