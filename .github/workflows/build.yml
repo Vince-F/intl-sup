@@ -17,4 +17,4 @@ jobs:
         with:
           node-version: 24.x
       - run: npm ci
-      - run: npm checkAndBuildAll
+      - run: npm run checkAndBuildAll
