@@ -49,6 +49,14 @@
       "types": "./types/src/numberFormatter.d.ts",
       "import": "./dist/numberFormatter.js"
     },
+    "./temperatureFormatter": {
+      "types": "./types/src/temperatureFormatter.d.ts",
+      "import": "./dist/temperatureFormatter.js"
+    },
+    "./temperatureUtils": {
+      "types": "./types/src/temperatureUtils.d.ts",
+      "import": "./dist/temperatureUtils.js"
+    },
     "./timeFormatter": {
       "types": "./types/src/timeFormatter.d.ts",
       "import": "./dist/timeFormatter.js"
