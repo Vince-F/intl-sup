@@ -1,3 +1,8 @@
+# NEXT VERSION
+
+- Feature: add temparature helper to obtain temprature units and convert them
+- Feature: add temperature formatter
+
 # 1.1.1
 
 - Fix: "numberFormatter" missing from library
