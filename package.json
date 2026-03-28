@@ -45,6 +45,10 @@
       "types": "./types/src/dateTimeFormatter.d.ts",
       "import": "./dist/dateTimeFormatter.js"
     },
+    "./monthUtils": {
+      "types": "./types/src/monthUtils.d.ts",
+      "import": "./dist/monthUtils.js"
+    },
     "./numberFormatter": {
       "types": "./types/src/numberFormatter.d.ts",
       "import": "./dist/numberFormatter.js"
@@ -64,6 +68,10 @@
     "./timeUtils": {
       "types": "./types/src/timeUtils.d.ts",
       "import": "./dist/timeUtils.js"
+    },
+    "./weekUtils": {
+      "types": "./types/src/weekUtils.d.ts",
+      "import": "./dist/weekUtils.js"
     }
   },
   "scripts": {
