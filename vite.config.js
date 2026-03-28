@@ -15,6 +15,8 @@ export default defineConfig({
         dateTimeFormatter: resolve(__dirname, "src/dateTimeFormatter.ts"),
         monthUtils: resolve(__dirname, "src/monthUtils.ts"),
         numberFormatter: resolve(__dirname, "src/numberFormatter.ts"),
+        temperatureFormatter: resolve(__dirname, "src/temperatureFormatter.ts"),
+        temperatureUtils: resolve(__dirname, "src/temperatureUtils.ts"),
         timeFormatter: resolve(__dirname, "src/timeFormatter.ts"),
         timeUtils: resolve(__dirname, "src/timeUtils.ts"),
         weekUtils: resolve(__dirname, "src/weekUtils.ts"),

@@ -53,6 +53,14 @@
       "types": "./types/src/numberFormatter.d.ts",
       "import": "./dist/numberFormatter.js"
     },
+    "./temperatureFormatter": {
+      "types": "./types/src/temperatureFormatter.d.ts",
+      "import": "./dist/temperatureFormatter.js"
+    },
+    "./temperatureUtils": {
+      "types": "./types/src/temperatureUtils.d.ts",
+      "import": "./dist/temperatureUtils.js"
+    },
     "./timeFormatter": {
       "types": "./types/src/timeFormatter.d.ts",
       "import": "./dist/timeFormatter.js"
@@ -84,6 +92,7 @@
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.8.1",
     "typedoc": "^0.28.17",
+    "typedoc-rhineai-theme": "^1.2.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.57.1",
     "vite": "^7.2.4",
