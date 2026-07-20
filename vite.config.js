@@ -8,6 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
+        "intl-sup": resolve(__dirname, "src/index.ts"),
         core: resolve(__dirname, "src/core.ts"),
         currencyFormatter: resolve(__dirname, "src/currencyFormatter.ts"),
         currencyHelper: resolve(__dirname, "src/currencyHelper.ts"),

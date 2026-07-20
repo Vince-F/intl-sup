@@ -3,15 +3,15 @@ import { getDateTimeFormatter } from "./internal/cachedDateFormatters";
 
 const weekDaysNamesCache = new Map<string, string[]>();
 
-export function getWeekDayssNames() {
+export function getWeekDaysNames() {
   return getWeekDaysNameWithOptions("long");
 }
 
-export function getShortWeekDayssNames() {
+export function getShortWeekDaysNames() {
   return getWeekDaysNameWithOptions("short");
 }
 
-export function getNarrowWeekDayssNames() {
+export function getNarrowWeekDaysNames() {
   return getWeekDaysNameWithOptions("narrow");
 }
 
