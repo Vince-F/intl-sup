@@ -1,3 +1,3 @@
-export declare function getWeekDayssNames(): string[];
-export declare function getShortWeekDayssNames(): string[];
-export declare function getNarrowWeekDayssNames(): string[];
+export declare function getWeekDaysNames(): string[];
+export declare function getShortWeekDaysNames(): string[];
+export declare function getNarrowWeekDaysNames(): string[];
