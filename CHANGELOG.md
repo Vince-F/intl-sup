@@ -1,4 +1,4 @@
-# NEXT VERSION
+# 1.2.0
 
 - Feature: add "monthUtils" with functions to retrieve the months names in the user's locale
 - Feature: add "weekUtils" with functions to retrieve the week days' names in the user's locale
