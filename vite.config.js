@@ -8,14 +8,19 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
+        "intl-sup": resolve(__dirname, "src/index.ts"),
         core: resolve(__dirname, "src/core.ts"),
         currencyFormatter: resolve(__dirname, "src/currencyFormatter.ts"),
         currencyHelper: resolve(__dirname, "src/currencyHelper.ts"),
         dateFormatter: resolve(__dirname, "src/dateFormatter.ts"),
         dateTimeFormatter: resolve(__dirname, "src/dateTimeFormatter.ts"),
+        monthUtils: resolve(__dirname, "src/monthUtils.ts"),
         numberFormatter: resolve(__dirname, "src/numberFormatter.ts"),
+        temperatureFormatter: resolve(__dirname, "src/temperatureFormatter.ts"),
+        temperatureUtils: resolve(__dirname, "src/temperatureUtils.ts"),
         timeFormatter: resolve(__dirname, "src/timeFormatter.ts"),
         timeUtils: resolve(__dirname, "src/timeUtils.ts"),
+        weekUtils: resolve(__dirname, "src/weekUtils.ts"),
       },
       name: "intl-sup",
     },

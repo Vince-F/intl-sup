@@ -11,5 +11,6 @@
     "./src/timeFormatter.ts",
     "./src/timeUtils.ts"
   ],
-  "out": "doc"
+  "out": "doc",
+  "plugin": ["typedoc-rhineai-theme"]
 }

@@ -1,6 +1,6 @@
 {
   "name": "intl-sup",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "author": {
     "name": "Vincent Francolin"
   },
@@ -25,37 +25,70 @@
     "types"
   ],
   "exports": {
+    ".": {
+      "types": "./types/src/intl-sup.d.ts",
+      "import": "./dist/intl-sup.js",
+      "require": "./dist/intl-sup.cjs"
+    },
     "./core": {
       "types": "./types/src/core.d.ts",
-      "import": "./dist/core.js"
+      "import": "./dist/core.js",
+      "require": "./dist/core.cjs"
     },
     "./currencyFormatter": {
       "types": "./types/src/currencyFormatter.d.ts",
-      "import": "./dist/currencyFormatter.js"
+      "import": "./dist/currencyFormatter.js",
+      "require": "./dist/currencyFormatter.cjs"
     },
     "./currencyHelper": {
       "types": "./types/src/currencyHelper.d.ts",
-      "import": "./dist/currencyHelper.js"
+      "import": "./dist/currencyHelper.js",
+      "require": "./dist/currencyHelper.cjs"
     },
     "./dateFormatter": {
       "types": "./types/src/dateFormatter.d.ts",
-      "import": "./dist/dateFormatter.js"
+      "import": "./dist/dateFormatter.js",
+      "require": "./dist/dateFormatter.cjs"
     },
     "./dateTimeFormatter": {
       "types": "./types/src/dateTimeFormatter.d.ts",
-      "import": "./dist/dateTimeFormatter.js"
+      "import": "./dist/dateTimeFormatter.js",
+      "require": "./dist/dateTimeFormatter.cjs"
+    },
+    "./monthUtils": {
+      "types": "./types/src/monthUtils.d.ts",
+      "import": "./dist/monthUtils.js",
+      "require": "./dist/monthUtils.cjs"
     },
     "./numberFormatter": {
       "types": "./types/src/numberFormatter.d.ts",
-      "import": "./dist/numberFormatter.js"
+      "import": "./dist/numberFormatter.js",
+      "require": "./dist/numberFormatter.cjs"
+    },
+    "./temperatureFormatter": {
+      "types": "./types/src/temperatureFormatter.d.ts",
+      "import": "./dist/temperatureFormatter.js",
+      "require": "./dist/temperatureFormatter.cjs"
+    },
+    "./temperatureUtils": {
+      "types": "./types/src/temperatureUtils.d.ts",
+      "import": "./dist/temperatureUtils.js",
+      "require": "./dist/temperatureUtils.cjs"
     },
     "./timeFormatter": {
       "types": "./types/src/timeFormatter.d.ts",
-      "import": "./dist/timeFormatter.js"
+      "import": "./dist/timeFormatter.js",
+      "require": "./dist/timeFormatter.cjs"
     },
     "./timeUtils": {
       "types": "./types/src/timeUtils.d.ts",
-      "import": "./dist/timeUtils.js"
+      "import": "./dist/timeUtils.js",
+      "require": "./dist/timeUtils.cjs"
+    },
+    "./weekUtils": {
+      "types": "./types/src/weekUtils.d.ts",
+      "import": "./dist/weekUtils.js",
+      "require": "./dist/weekUtils.cjs"
     }
   },
   "scripts": {
@@ -76,6 +109,7 @@
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.8.1",
     "typedoc": "^0.28.17",
+    "typedoc-rhineai-theme": "^1.2.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.57.1",
     "vite": "^7.2.4",
