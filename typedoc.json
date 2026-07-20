@@ -7,9 +7,13 @@
     "./src/currencyHelper.ts",
     "./src/dateFormatter.ts",
     "./src/dateTimeFormatter.ts",
+    "./src/monthUtils.ts",
     "./src/numberFormatter.ts",
+    "./src/temperatureFormatter.ts",
+    "./src/temperatureUtils.ts",
     "./src/timeFormatter.ts",
-    "./src/timeUtils.ts"
+    "./src/timeUtils.ts",
+    "./src/weekUtils.ts"
   ],
   "out": "doc",
   "plugin": ["typedoc-rhineai-theme"]
